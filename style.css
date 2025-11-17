@@ -84,9 +84,8 @@ p { font-size: 5vw; }
   0% { transform: translate(0,0) scale(1); opacity:1; }
   100% { transform: translate(0,-150px) scale(0.8); opacity:0; }
 }
-/* Enlever l'effet bleu lors du tap sur mobile */
+
+/* ===== Supprimer le flash bleu sur mobile ===== */
 body, button, input, label {
-  -webkit-tap-highlight-color: transparent; /* iOS et Chrome */
+  -webkit-tap-highlight-color: transparent;
 }
-
-
