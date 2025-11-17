@@ -2,17 +2,16 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Important pour mobile -->
   <title>Pour ma chérie 💖</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  
+
   <!-- Texte d’accueil -->
   <div class="container" id="startText">
     <h1>Salut ma chérie 💕</h1>
     <p>✨ C'est tout mon amour ✨</p>
-    <p>✨ clique ici !! ✨</p>
   </div>
 
   <!-- Musique -->
@@ -20,31 +19,29 @@
 
   <!-- Question -->
   <div class="question-container" id="questionContainer" style="display:none;">
-    <p>Tu veux etre ma femme ? 💖</p>
+    <p>Tu veux être ma femme ? 💖</p>
 
     <label class="option">
-      <input type="radio" name="reponse" value="oui">
-      Oui
+      <input type="radio" name="reponse" value="oui"> Oui
     </label>
 
     <label class="option">
-      <input type="radio" name="reponse" value="non">
-      Non
+      <input type="radio" name="reponse" value="non"> Non
     </label>
 
     <button id="submitAnswer">Envoyer</button>
   </div>
 
+  <!-- Message Oui -->
+  <div id="merciMessage" style="display:none; text-align:center; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); font-size:2rem; color:pink;">
+    Merci, je t'aime 💖
+  </div>
+
+  <!-- Message Non -->
+  <div id="nonMessage" style="display:none; text-align:center; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); font-size:2rem; color:red;">
+    Dommage 😢💔
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
-<!-- Message de remerciement pour Oui -->
-<div id="merciMessage" style="display:none; text-align:center; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); font-size:2rem; color:pink;">
-  Merci, je t'aime 💖
-</div>
-
-<!-- Message pour Non -->
-<div id="nonMessage" style="display:none; text-align:center; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); font-size:2rem; color:red;">
-  Dommage 😢
-</div>
-
