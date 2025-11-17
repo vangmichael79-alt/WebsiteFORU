@@ -1,0 +1,111 @@
+/* ===== Style de base ===== */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: black;
+  color: white;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+/* ===== Texte d'accueil ===== */
+.container {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ===== Conteneur question ===== */
+.question-container {
+  position: absolute;               
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  text-align: center;               
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.question-container p {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+}
+
+/* ===== Alignement des options ===== */
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 5px 0;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.option input[type="radio"] {
+  transform: scale(1.4);
+  cursor: pointer;
+}
+
+/* ===== Bouton envoyer ===== */
+#submitAnswer {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background-color: #ff4d6d;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#submitAnswer:hover {
+  background-color: #ff1e4d;
+}
+
+/* ===== Style des cœurs ===== */
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  z-index: 9999;
+  animation: float 3s linear forwards;
+}
+
+/* ===== Animation ===== */
+@keyframes float {
+  0% {
+    transform: translate(var(--dx, 0), var(--dy, 0))
+               rotate(var(--rotate, 0deg))
+               scale(var(--size, 1));
+    opacity: 1;
+  }
+
+  50% {
+    transform: translate(
+      calc(var(--dx) + var(--mx)),
+      calc(var(--dy) + var(--my))
+    )
+    rotate(calc(var(--rotate) + 20deg))
+    scale(calc(var(--size) * 1.2));
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(
+      calc(var(--dx) + var(--mx) * 2),
+      calc(var(--dy) + var(--my) * 2)
+    )
+    rotate(calc(var(--rotate) + 40deg))
+    scale(calc(var(--size) * 0.8));
+    opacity: 0;
+  }
+}
