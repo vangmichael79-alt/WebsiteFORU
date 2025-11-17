@@ -32,7 +32,7 @@ function createHeartAuto() {
   heart.style.setProperty("--my",`${(Math.random()-0.5)*200}px`);
   heart.style.setProperty("--rotate",`${Math.random()*360}deg`);
 
-  setTimeout(()=>{heart.remove();}, 3000);
+  setTimeout(()=>{heart.remove();},3000);
 }
 
 // ===== Cœurs automatiques tout le temps =====
@@ -45,7 +45,14 @@ function showQuestion() {
 
   const music = document.getElementById("music");
   music.volume = 0.1;
-  music.play().catch(()=>{ console.log("Interagir pour démarrer la musique"); });
+
+  // Essayer de lancer la musique après interaction
+  const playPromise = music.play();
+  if (playPromise !== undefined) {
+    playPromise.catch(error => {
+      console.log("L'utilisateur doit interagir pour lancer la musique", error);
+    });
+  }
 }
 
 // ===== Clic et touch pour mobile =====
