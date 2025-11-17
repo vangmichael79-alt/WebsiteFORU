@@ -18,24 +18,28 @@ body, html {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 500px;
 }
+
+h1 { font-size: 8vw; }
+p { font-size: 5vw; }
 
 /* ===== Conteneur question ===== */
 .question-container {
-  position: absolute;               
+  position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); 
-  text-align: center;               
+  transform: translate(-50%, -50%);
+  text-align: center;
   background-color: rgba(255, 255, 255, 0.1);
   padding: 20px;
   border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
 }
 
-.question-container p {
-  font-size: 1.6rem;
-  margin-bottom: 15px;
-}
+.question-container p { font-size: 5vw; margin-bottom: 15px; }
 
 /* ===== Alignement des options ===== */
 .option {
@@ -44,20 +48,17 @@ body, html {
   justify-content: center;
   gap: 10px;
   margin: 5px 0;
-  font-size: 1.3rem;
+  font-size: 4vw;
   cursor: pointer;
 }
 
-.option input[type="radio"] {
-  transform: scale(1.4);
-  cursor: pointer;
-}
+.option input[type="radio"] { transform: scale(1.4); cursor: pointer; }
 
 /* ===== Bouton envoyer ===== */
 #submitAnswer {
   margin-top: 15px;
   padding: 10px 20px;
-  font-size: 1.2rem;
+  font-size: 4vw;
   background-color: #ff4d6d;
   color: white;
   border: none;
@@ -66,9 +67,7 @@ body, html {
   transition: 0.2s;
 }
 
-#submitAnswer:hover {
-  background-color: #ff1e4d;
-}
+#submitAnswer:hover { background-color: #ff1e4d; }
 
 /* ===== Style des cœurs ===== */
 .heart {
@@ -77,35 +76,12 @@ body, html {
   height: 20px;
   pointer-events: none;
   z-index: 9999;
-  animation: float 3s linear forwards;
+  animation: float 2.5s linear forwards;
 }
 
-/* ===== Animation ===== */
+/* ===== Animation des cœurs ===== */
 @keyframes float {
-  0% {
-    transform: translate(var(--dx, 0), var(--dy, 0))
-               rotate(var(--rotate, 0deg))
-               scale(var(--size, 1));
-    opacity: 1;
-  }
-
-  50% {
-    transform: translate(
-      calc(var(--dx) + var(--mx)),
-      calc(var(--dy) + var(--my))
-    )
-    rotate(calc(var(--rotate) + 20deg))
-    scale(calc(var(--size) * 1.2));
-    opacity: 1;
-  }
-
-  100% {
-    transform: translate(
-      calc(var(--dx) + var(--mx) * 2),
-      calc(var(--dy) + var(--my) * 2)
-    )
-    rotate(calc(var(--rotate) + 40deg))
-    scale(calc(var(--size) * 0.8));
-    opacity: 0;
-  }
+  0% { transform: translate(0,0) scale(1); opacity:1; }
+  100% { transform: translate(0,-150px) scale(0.8); opacity:0; }
 }
+
