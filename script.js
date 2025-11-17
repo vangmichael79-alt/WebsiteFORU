@@ -55,9 +55,15 @@ function showQuestion() {
   }
 }
 
-// ===== Clic et touch pour mobile =====
-document.body.addEventListener("click", showQuestion, { once:true });
-document.body.addEventListener("touchstart", showQuestion, { once:true });
+// ===== Détecter PC vs mobile =====
+const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+// Premier clic/tap pour afficher la question
+if(isTouch){
+  document.body.addEventListener("touchstart", showQuestion, { once:true });
+} else {
+  document.body.addEventListener("click", showQuestion, { once:true });
+}
 
 // ===== Bouton envoyer =====
 document.getElementById("submitAnswer").addEventListener("click", (e)=>{
@@ -127,3 +133,4 @@ function createHeartBroken(){
 
   setTimeout(()=>{heart.remove();},3000);
 }
+
