@@ -22,8 +22,8 @@ body, html {
   max-width: 500px;
 }
 
-h1 { font-size: 8vw; }
-p { font-size: 5vw; }
+h1 { font-size: 3rem; }
+p { font-size: 1.8rem; }
 
 /* ===== Conteneur question ===== */
 .question-container {
@@ -39,7 +39,7 @@ p { font-size: 5vw; }
   max-width: 500px;
 }
 
-.question-container p { font-size: 5vw; margin-bottom: 15px; }
+.question-container p { font-size: 1.8rem; margin-bottom: 15px; }
 
 /* ===== Alignement des options ===== */
 .option {
@@ -48,7 +48,7 @@ p { font-size: 5vw; }
   justify-content: center;
   gap: 10px;
   margin: 5px 0;
-  font-size: 4vw;
+  font-size: 1.5rem;
   cursor: pointer;
 }
 
@@ -58,7 +58,7 @@ p { font-size: 5vw; }
 #submitAnswer {
   margin-top: 15px;
   padding: 10px 20px;
-  font-size: 4vw;
+  font-size: 1.5rem;
   background-color: #ff4d6d;
   color: white;
   border: none;
@@ -88,4 +88,13 @@ p { font-size: 5vw; }
 /* ===== Supprimer le flash bleu sur mobile ===== */
 body, button, input, label {
   -webkit-tap-highlight-color: transparent;
+}
+
+/* ===== Responsive pour mobile ===== */
+@media (max-width: 768px) {
+  h1 { font-size: 8vw; }
+  p { font-size: 5vw; }
+  .option { font-size: 4vw; }
+  #submitAnswer { font-size: 4vw; padding:10px 15px; }
+  .question-container p { font-size: 5vw; }
 }
